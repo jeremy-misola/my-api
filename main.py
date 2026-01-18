@@ -27,7 +27,7 @@ def create_item(item: Item):
 @app.get("/items/", response_model=ItemsResponse)
 def read_items():
     return {
-        "message": "hello world!",
+        "message": "hello world! this is kleff!",
         "items": db
     }
 
