@@ -10,6 +10,10 @@ class Item(BaseModel):
     name: str
     description: Optional[str] = None
 
+class ItemsResponse(BaseModel):
+    message: str
+    items: List[Item]
+
 # In-memory "database"
 db = []
 
@@ -20,9 +24,12 @@ def create_item(item: Item):
     return item
 
 # READ (All)
-@app.get("/items/", response_model=List[Item])
+@app.get("/items/", response_model=ItemsResponse)
 def read_items():
-    return db
+    return {
+        "message": "hello world!",
+        "items": db
+    }
 
 # READ (One)
 @app.get("/items/{item_id}", response_model=Item)
