@@ -52,7 +52,7 @@ def create_item(item: Item):
 def read_items():
     logger.info(f"Fetching all items. Current count: {len(db)}")
     return {
-        "message": "hello all world! this is kleff!",
+        "message": "hello all compsci world! this is kleff!",
         "items": db
     }
 
